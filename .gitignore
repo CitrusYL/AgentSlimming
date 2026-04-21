@@ -1,0 +1,33 @@
+.DS_Store
+config/config.yaml
+logs
+*/__pycache__
+__pycache__/
+*.pyc
+/workspace/*
+!/workspace/MATHDEMO/
+!/workspace/MATHDEMO/**
+/workspace/MATHDEMO/**/__pycache__/
+
+# Dataset publication policy:
+# - Git-managed benchmark fixtures are explicitly allowlisted below.
+# - Downloaded or local-only dataset artifacts stay ignored by default.
+data/datasets/*
+!data/datasets/drop_validate.jsonl
+!data/datasets/drop_test.jsonl
+!data/datasets/gsm8k_validate.jsonl
+!data/datasets/gsm8k_test.jsonl
+!data/datasets/hotpotqa_validate.jsonl
+!data/datasets/hotpotqa_test.jsonl
+!data/datasets/math_validate.jsonl
+!data/datasets/math_test.jsonl
+!data/datasets/humaneval_validate.jsonl
+!data/datasets/humaneval_test.jsonl
+!data/datasets/humaneval_public_test.jsonl
+!data/datasets/mbpp_validate.jsonl
+!data/datasets/mbpp_test.jsonl
+!data/datasets/mbpp_public_test.jsonl
+
+.idea
+/error.log
+logs
