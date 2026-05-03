@@ -47,6 +47,23 @@ class Workflow(BaseWorkflow):
             final_node_id="AnswerFormatter",
         )
 ```
+    Note on cost counting:
+
+    - Each node instance supports an optional `count_towards_cost` flag (defaults to `True`).
+    - When set to `False`, the executor will skip adding that node's LLM usage to the final cost summary.
+    - Example: exclude an internal debugging node from cost accounting:
+
+    ```python
+    Reasoner = CustomNode(
+      node_id="Reasoner",
+      node_prompt=prompt_custom.PROMPT_REASONING,
+      node_llm_config=self.llm_config,
+      description="Reason over the problem.",
+      count_towards_cost=False,  # do not include this node in cost totals
+    )
+    ```
+
+    The executor checks `node.count_towards_cost` when recording usage and will only add calls to the `LLMCostTracker` if the flag is `True`.
 
 The adjacent `prompt.py` file contains only custom prompt constants used by prompt-driven nodes such as `CustomNode` or `CustomCodeGenerateNode`.
 

@@ -31,7 +31,7 @@ class GraphExecutor(BaseModel):
                 else:
                     node_result = node.execute(input_data)
 
-                self._record_llm_usage(cost_tracker, node_id, node_result)
+                self._record_llm_usage(cost_tracker, node_id, node,node_result)
 
             except Exception as e:
                 node_result = {"success": False, "error": str(e), "node_id": node_id}
@@ -89,10 +89,14 @@ class GraphExecutor(BaseModel):
     def _record_llm_usage(
         self,
         cost_tracker: LLMCostTracker,
+        node: Node,
         node_id: str,
         node_result: Any,
     ) -> None:
         if not isinstance(node_result, dict):
+            return
+        
+        if not getattr(node, "count_towards_cost", True):
             return
 
         for usage in node_result.get("llm_usage") or []:
