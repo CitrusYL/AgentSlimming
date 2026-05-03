@@ -12,6 +12,7 @@ Short notes:
 
 - This repository started from an AFlow-derived codebase and has since been substantially refactored.
 - The exploration style of the MCTS pipeline can be steered significantly by the optimizer prompt in `src/prompts/`.
+- Nodes support an optional `count_towards_cost` boolean (default `True`) that lets you exclude a node's LLM usage from the final cost summary; set it in the generated `graph.py` node constructor.
 - This repository went through a large refactor before open-sourcing. We cannot guarantee that every path has been extensively tested yet. If you hit issues, please open an issue or send a PR.
 
 <p align="center">

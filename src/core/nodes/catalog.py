@@ -134,7 +134,7 @@ NODE_DEFINITIONS: dict[str, NodeDefinition] = {
         description="Workflow entry node. Use exactly one Input node with node_id=\"Input\".",
         constructor=(
             "InputNode(node_id=\"Input\", node_llm_config=self.llm_config, "
-            "description=\"Graph input entry\")"
+            "description=\"Graph input entry\", count_towards_cost=True)"
         ),
         outputs=("success",),
     ),
@@ -154,7 +154,7 @@ NODE_DEFINITIONS: dict[str, NodeDefinition] = {
         description="Flexible LLM reasoning node driven by a custom prompt constant.",
         constructor=(
             "CustomNode(node_id=\"...\", node_prompt=prompt_custom.<PROMPT_NAME>, "
-            "node_llm_config=self.llm_config, description=\"...\")"
+            "node_llm_config=self.llm_config, description=\"...\", count_towards_cost=True)"
         ),
         outputs=("output", "llm_usage"),
         prompt_required=True,
@@ -176,7 +176,7 @@ NODE_DEFINITIONS: dict[str, NodeDefinition] = {
         description="Built-in answer generation node for direct step-by-step solving.",
         constructor=(
             "AnswerGenerateNode(node_id=\"...\", node_llm_config=self.llm_config, "
-            "description=\"...\")"
+            "description=\"...\", count_towards_cost=True)"
         ),
         outputs=("output", "answer", "llm_usage"),
     ),
@@ -198,7 +198,7 @@ NODE_DEFINITIONS: dict[str, NodeDefinition] = {
         description="LLM self-consistency selector over multiple upstream candidate solutions.",
         constructor=(
             "ScEnsembleNode(node_id=\"...\", node_llm_config=self.llm_config, "
-            "description=\"...\")"
+            "description=\"...\", count_towards_cost=True)"
         ),
         outputs=("output", "llm_usage"),
     ),
@@ -225,7 +225,7 @@ NODE_DEFINITIONS: dict[str, NodeDefinition] = {
         description="Generates Python code, executes solve(), and returns the execution output.",
         constructor=(
             "ProgramNode(node_id=\"...\", node_llm_config=self.llm_config, "
-            "description=\"...\")"
+            "description=\"...\", count_towards_cost=True)"
         ),
         outputs=("code", "output", "llm_usage"),
     ),
@@ -250,7 +250,7 @@ NODE_DEFINITIONS: dict[str, NodeDefinition] = {
         constructor=(
             "CustomCodeGenerateNode(node_id=\"...\", "
             "node_prompt=prompt_custom.<PROMPT_NAME>, "
-            "node_llm_config=self.llm_config, description=\"...\")"
+            "node_llm_config=self.llm_config, description=\"...\", count_towards_cost=True)"
         ),
         outputs=("code", "output", "entry_point", "llm_usage"),
         prompt_required=True,
@@ -274,7 +274,7 @@ NODE_DEFINITIONS: dict[str, NodeDefinition] = {
         description="Executes upstream Python code and asks the LLM to repair it on failure.",
         constructor=(
             "TestNode(node_id=\"...\", node_llm_config=self.llm_config, "
-            "description=\"...\")"
+            "description=\"...\", count_towards_cost=True)"
         ),
         outputs=("result", "solution", "output", "llm_usage"),
     ),
@@ -302,7 +302,7 @@ NODE_DEFINITIONS: dict[str, NodeDefinition] = {
         description="Final node that formats the selected raw answer for the target dataset.",
         constructor=(
             "AnswerFormatNode(node_id=\"AnswerFormatter\", dataset_name=self.dataset, "
-            "node_llm_config=self.llm_config, description=\"Format the final answer\")"
+            "node_llm_config=self.llm_config, description=\"Format the final answer\", count_towards_cost=True)"
         ),
         outputs=("output", "llm_usage"),
     ),

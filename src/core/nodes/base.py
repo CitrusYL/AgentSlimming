@@ -19,7 +19,11 @@ class Node(BaseModel, ABC):
     node_description: Optional[str] = Field(default=None, alias="description")
     node_prompt: Optional[str] = None
     node_llm_config: Dict[str, Any] = Field(...)
-
+    count_towards_cost: bool = Field(
+        default=True,
+        description="Whether LLM usage from this node should be included in final cost summary.",
+    )
+    
     @property
     def definition(self) -> NodeDefinition:
         return get_node_definition(self.spec_name)
