@@ -1,8 +1,8 @@
 # AgentSlimming: Towards Efficient and Cost-Aware Multi-Agent Systems
 
-[![Paper](https://img.shields.io/badge/Paper-AgentSlimming-b31b1b)](https://openreview.net/pdf?id=nrZRbXMyzi)
+[![Paper](https://img.shields.io/badge/Paper-AgentSlimming-b31b1b)](https://arxiv.org/abs/2605.08813)
 ![ACL](https://img.shields.io/badge/ACL-Accepted-blue)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
+![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen)
 
 AgentSlimming is a research framework for optimizing graph-structured LLM agent workflows. It searches over executable workflow graphs, evaluates them on task benchmarks, and then reduces cost with pruning, quantization, and optional finetuning.
 
@@ -102,7 +102,8 @@ If you use AgentSlimming in your research, please cite the ACL paper.
 
 ```bibtex
 @inproceedings{agentslimming2026,
-  title = {AgentSlimming: Towards Efficient and Cost-Aware Multi-Agent Systems},
+  title = {AgentSlimming: Towards Efficient and Cost-Aware Multi-Agent Systems}, 
+  author={Yulang Chen and Haoxuan Peng and Jinyan Liu and Zichen Wen and Dongrui Liu and Linfeng Zhang},
   booktitle = {Proceedings of the Annual Meeting of the Association for Computational Linguistics},
   year = {2026}
 }
