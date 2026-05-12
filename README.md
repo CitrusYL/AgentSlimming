@@ -1,8 +1,8 @@
 # AgentSlimming: Towards Efficient and Cost-Aware Multi-Agent Systems
 
 [![Paper](https://img.shields.io/badge/Paper-AgentSlimming-b31b1b)](https://arxiv.org/abs/2605.08813)
-![ACL](https://img.shields.io/badge/ACL-Accepted-blue)(https://arxiv.org/abs/2605.08813)
-![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen)(https://github.com/CitrusYL/AgentSlimming/pulls)
+[![ACL](https://img.shields.io/badge/ACL-Accepted-blue)](https://arxiv.org/abs/2605.08813)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen)](https://github.com/CitrusYL/AgentSlimming/pulls)
 
 AgentSlimming is a research framework for optimizing graph-structured LLM agent workflows. It searches over executable workflow graphs, evaluates them on task benchmarks, and then reduces cost with pruning, quantization, and optional finetuning.
 
