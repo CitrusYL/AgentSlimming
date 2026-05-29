@@ -130,6 +130,7 @@ def safe_snapshot_download(
             return Path(path)
         except Exception as e:
             last_err = e
+            
             if attempt == retries or not _is_retryable_hf_error(e):
                 raise
             sleep_s = min(60, 2 ** attempt)
